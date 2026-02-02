@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Slot Machine</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="slot" id="slotRoot">
+      <!-- 상단 간판 -->
+      <div class="marquee">
+        <span>LUCKY SPIN</span>
+        <span>LUCKY SPIN</span>
+        <span>LUCKY SPIN</span>
+      </div>
+
+      <!-- 본체 -->
+      <div class="cabinet">
+        <div class="glass">
+          <div class="window">
+            <ul id="reel" class="list"></ul>
+          </div>
+          <div class="pointer">▶</div>
+        </div>
+
+        <!-- 레버 -->
+        <button id="lever" class="lever" aria-label="레버 당기기">
+          <span class="lever-stick"></span>
+          <span class="lever-knob"></span>
+        </button>
+      </div>
+
+      <!-- 하단 패널 -->
+      <div class="panel">
+        <div class="lamp"></div>
+        <div class="lamp"></div>
+        <div class="lamp"></div>
+        <button id="spinBtn" class="spin">SPIN</button>
+        <div class="lamp"></div>
+        <div class="lamp"></div>
+        <div class="lamp"></div>
+      </div>
+
+      <!-- 결과 -->
+      <p id="result" class="result">결과: -</p>
+
+      <!-- 메뉴 추가/삭제 -->
+      <section class="menu">
+        <h3>메뉴 추가</h3>
+        <div class="add-area">
+          <textarea
+            id="itemInput"
+            class="add-input"
+            rows="3"
+            placeholder="메뉴를 입력하세요"
+          ></textarea>
+          <button id="addBtn" class="add-btn">추가</button>
+        </div>
+        <div class="menu-actions">
+          <button id="clearBtn" class="sub-btn">초기화</button>
+          <span class="hint"
+            >팁: 여러 개 입력 후 ‘추가’. (Ctrl+Enter로도 추가)</span
+          >
+        </div>
+
+        <h3>현재 메뉴</h3>
+        <ul id="menuList" class="menu-list"></ul>
+      </section>
+
+      <!-- 히스토리 / 통계 -->
+      <section class="history">
+        <h3>최근 결과</h3>
+        <ol id="historyList"></ol>
+
+        <h3>통계(나온 횟수)</h3>
+        <ul id="statsList"></ul>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
